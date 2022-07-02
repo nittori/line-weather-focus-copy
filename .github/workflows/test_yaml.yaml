@@ -29,6 +29,5 @@ jobs:
             python get_weather_focus.py
         env:
             #area_code は {PREFECTURE}-{LOCAL}-{MUNICIPALITY}
-            area_code:${{secrets.AREA_CODE}}
+            area_code: ${{secrets.AREA_CODE}}
             LINE_TOKEN: ${{secrets.LINE_TOKEN}}
-
