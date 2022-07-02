@@ -28,6 +28,8 @@ def get_various_code(area_code):
             codes.append(tmp_code)
         else :
             tmp_code += s
+    codes.append(tmp_code)
+    
     prefecture_code = codes[0]
     local_code = codes[1]
     municipality_code = codes[2]
