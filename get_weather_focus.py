@@ -44,16 +44,13 @@ def get_weather_focus():
     
     area_code = os.environ.get("area_code")
     prefecture_code,local_code,municipality_code = get_various_code(area_code)
-    print(prefecture_code,local_code,municipality_code)
     
     #data取得
-    
     web_link=f"https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code={prefecture_code}"
     
     filename = get_json(prefecture_code)
     data = read_json(filename)
-    print(data)
-    """
+    
     #0-0 天気予報
     
     timeDefines = data[0]["timeSeries"][0]["timeDefines"]#取得日、明日、明後日の日付
@@ -119,7 +116,7 @@ def get_weather_focus():
     text = header+body1+body2+body3+footer
     print(text)
     return text
-    """
+    
 if __name__ == "__main__":
     get_weather_focus()
     
