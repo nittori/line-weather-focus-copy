@@ -74,10 +74,10 @@ def get_weather_focus():
     timeDefines = data[0]["timeSeries"][1]["timeDefines"]
     areas = data[0]["timeSeries"][1]["areas"]
     
+    pops = []
+    times = []
     for area in areas:
         if local_code == area["area"]["code"]:
-            pops = []
-            times = []
             for i in range(len(timeDefines)):
                 if i == 0:
                     continue
@@ -85,6 +85,7 @@ def get_weather_focus():
                 timeDefine = datetime.datetime.strptime(timeDefines[i], '%Y-%m-%dT%H:%M:%S%z')
                 hour = timeDefine.hour
                 times.append(f"{hour}-{(hour+6)%24}")
+            break
     
     pops_data = ""
     for t in times:
