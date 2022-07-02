@@ -107,7 +107,7 @@ def get_weather_focus():
     #1-0 prefecture
     prefecture = data[1]["timeSeries"][0]["areas"][0]["area"]["name"]
     
-    header = f"{today.strftime('%Y年%m月%d日')} \n" 
+    header = f"\n{today.strftime('%Y年%m月%d日')} \n" 
     body1 = f"-天気- \n{weather}\n"
     body2 = f"-降水確率- \n{pops_data}\n"
     body3 = f"-{municipality_name}の気温-\n最高気温 : {max_temp}°C\n最低気温 : {min_temp}°C\n" 
