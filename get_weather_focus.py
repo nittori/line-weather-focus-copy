@@ -44,6 +44,7 @@ def get_weather_focus():
     
     area_code = os.environ.get("area_code")
     prefecture_code,local_code,municipality_code = get_various_code(area_code)
+    print(prefecture_code,local_code,municipality_code)
     
     #data取得
     
