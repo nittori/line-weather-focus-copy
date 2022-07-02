@@ -26,6 +26,7 @@ def get_various_code(area_code):
     for s in area_code:
         if s == "-":
             codes.append(tmp_code)
+            tmp_code = ""
         else :
             tmp_code += s
     codes.append(tmp_code)
