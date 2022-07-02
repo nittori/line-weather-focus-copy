@@ -52,7 +52,8 @@ def get_weather_focus():
     
     filename = get_json(prefecture_code)
     data = read_json(filename)
-    
+    print(data)
+    """
     #0-0 天気予報
     
     timeDefines = data[0]["timeSeries"][0]["timeDefines"]#取得日、明日、明後日の日付
@@ -118,7 +119,7 @@ def get_weather_focus():
     text = header+body1+body2+body3+footer
     print(text)
     return text
-    
+    """
 if __name__ == "__main__":
     get_weather_focus()
     
