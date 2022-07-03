@@ -79,7 +79,7 @@ def get_weather_focus():
     for area in areas:
         if local_code == area["area"]["code"]:
             for i in range(len(timeDefines)):
-                if i == 0:
+                if i > 3:
                     continue
                 pops.append(area["pops"][i])
                 timeDefine = datetime.datetime.strptime(timeDefines[i], '%Y-%m-%dT%H:%M:%S%z')
@@ -110,7 +110,7 @@ def get_weather_focus():
     header = f"\n{today.strftime('%Y年%m月%d日')} \n" 
     body1 = f"-天気- \n{weather}\n"
     body2 = f"-降水確率- \n{pops_data}\n"
-    body3 = f"-{municipality_name}の気温-\n最高気温 : {max_temp}°C\n最低気温 : {min_temp}°C\n" 
+    body3 = f"-{municipality_name}の気温-\n最高気温 : {max_temp}°C\n"#最低気温 : {min_temp}°C\n" 
     footer = f"\n{web_link}"
     
     text = header+body1+body2+body3+footer
